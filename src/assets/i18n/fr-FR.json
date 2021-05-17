@@ -1,0 +1,11 @@
+{
+  "HOME": {
+    "TITLE": "Bienvenue à Ballistic Echo",
+    "SELECT": "Changer la langue",
+    "TABLE_HEADING_FIRST_NAME":"Prénom",
+    "TABLE_HEADING_SECOND_NAME": "Nom de famille",
+    "TABLE_HEADING_LOCATION":"Emplacement",
+    "TABLE_HEADING_PROVINCE":"Province",
+    "MODAL_HEADER":"Détails du client"
+  }
+}

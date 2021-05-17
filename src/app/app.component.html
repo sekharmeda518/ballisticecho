@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-6">
+  <h2>{{ 'HOME.TITLE' | translate }}</h2>
+  </div>
+  <div class="col-6">
+  <label style="float: right;">
+    {{ 'HOME.SELECT' | translate }} :
+    <select #langSelect (change)="translate.use(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{
+        lang }}</option>
+    </select>
+  </label>
+  </div>
+</div>
+
+<app-customer-list></app-customer-list>

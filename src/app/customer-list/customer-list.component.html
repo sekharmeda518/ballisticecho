@@ -1,0 +1,83 @@
+<div class="row mt-4">
+    <div class="col-12">
+        <table id="datatableID" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">{{ 'HOME.TABLE_HEADING_FIRST_NAME' | translate }}</th>
+                    <th scope="col">{{ 'HOME.TABLE_HEADING_SECOND_NAME' | translate }}</th>
+                    <th scope="col">{{ 'HOME.TABLE_HEADING_LOCATION' | translate }}</th>
+                    <th scope="col">{{ 'HOME.TABLE_HEADING_PROVINCE' | translate }}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let customer of customerList; let i = index" (click)="openModal(customer)">
+                    <td>{{customer.firstName}}</td>
+                    <td>{{customer.lastName}}</td>
+                    <td>{{customer.location}}</td>
+                    <td>{{customer.province}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal" id="imagemodal" [style.display]="showModal ? 'block' : 'none'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">{{ 'HOME.MODAL_HEADER' | translate }}</h4>
+                <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+            <table id="datatableID" class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ 'HOME.TABLE_HEADING_FIRST_NAME' | translate }}</th>
+                        <th scope="col">{{ 'HOME.TABLE_HEADING_SECOND_NAME' | translate }}</th>
+                        <th scope="col">{{ 'HOME.TABLE_HEADING_LOCATION' | translate }}</th>
+                        <th scope="col">{{ 'HOME.TABLE_HEADING_PROVINCE' | translate }}</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{{Firstname}}</td>
+                        <td>{{Lastname}}</td>
+                        <td>{{location}}</td>
+                        <td>{{province}}</td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [style.display]="showAlert ? 'block' : 'none'">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="hideAlert()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
